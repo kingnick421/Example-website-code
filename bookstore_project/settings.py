@@ -132,5 +132,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Use custom user model
-
 AUTH_USER_MODEL = "users.CustomUser"
+
+# Redirection after login
+LOGIN_REDIRECT_URL = "index"
+
+# Redirection after logout
+LOGOUT_REDIRECT_URL = "index"
