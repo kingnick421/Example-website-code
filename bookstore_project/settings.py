@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # Local
     "users.apps.UsersConfig",
     "pages.apps.PagesConfig",
+    "books.apps.BooksConfig",
 ]
 
 MIDDLEWARE = [
@@ -169,7 +170,7 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
 )
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 ACCOUNT_SESSION_REMEMBER = True
 
@@ -182,3 +183,13 @@ ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
 
 ACCOUNT_UNIQUE_EMAIL = True
+
+
+
+DEFAULT_FROM_EMAIL = "webmaster@localhost"
+
+EMAIL_USE_TLS = False
+EMAIL_HOST = "smtp.mailgun.org"
+EMAIL_HOST_USER = "postmaster@sandboxab7f5a3bccae4a4b9addb9f1ef631926.mailgun.org"
+EMAIL_HOST_PASSWORD = "6e8372100335167d2f72677c4fa07cfc-523596d9-abade261"
+EMAIL_PORT = 587
